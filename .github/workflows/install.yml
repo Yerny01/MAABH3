@@ -1,5 +1,5 @@
 name: install
-# 1
+# 0.1
 on:
   push:
     tags:
