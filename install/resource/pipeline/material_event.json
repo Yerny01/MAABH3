@@ -1,0 +1,131 @@
+{
+    "MaterialEvent": {
+        "next": [
+            "MaterialEventFlag",
+            "Sub_AiPromptFlag",
+            "Sub_CancelDownload",
+            "Sub_EnterMaterialExpeditionPage",
+            "Sub_EnterAttackEventPage",
+            "Sub_EnterAttackPage",
+            "Sub_BackButton",
+            "Sub_StartUp"
+        ]
+    },
+    "MaterialEventFlag": {
+        "recognition": "TemplateMatch",
+        "template": "MaterialEvent/MaterialEventFlag.png",
+        "roi": [
+            525,
+            40,
+            229,
+            141
+        ],
+        "next": [
+            "QuickLITE",
+            "Sub_EnterMaterialEventPage",
+            "NoneQuickLITE"
+        ]
+    },
+    "QuickLITE": {
+        "recognition": "TemplateMatch",
+        "template": "MaterialEvent/QuickLITE.png",
+        "roi": [
+            1037,
+            598,
+            243,
+            122
+        ],
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "LITE",
+            "MaterialEventNoneLevelsToLITE",
+            "QuickLITE"
+        ]
+    },
+    "NoneQuickLITE": {
+        "recognition": "TemplateMatch",
+        "template": "MaterialEvent/QuickLITE.png",
+        "roi": [
+            1037,
+            598,
+            243,
+            122
+        ],
+        "inverse": true,
+        "next": [
+            "Sub_HomeButton",
+            "HomeFlag"
+        ]
+    },
+    "LITE": {
+        "recognition": "TemplateMatch",
+        "template": "MaterialEvent/LITE.png",
+        "roi": [
+            558,
+            462,
+            162,
+            135
+        ],
+        "action": "Click",
+        "next": [
+            "LITE",
+            "MaterialEventNotEnoughAP",
+            "Sub_CloseDialogBox",
+            "Sub_HomeButton",
+            "HomeFlag"
+        ]
+    },
+    "MaterialEventNotEnoughAP": {
+        "recognition": "OCR",
+        "expected": [
+            "没有足够体力"
+        ],
+        "roi": [
+            488,
+            285,
+            302,
+            145
+        ],
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "MaterialEventNotEnoughAPToGetStoredAP",
+            "Sub_CloseDialogBox",
+            "Sub_HomeButton",
+            "HomeFlag"
+        ]
+    },
+    "MaterialEventNotEnoughAPToGetStoredAP": {
+        "recognition": "TemplateMatch",
+        "template": "Dorm/CollectAPButton.png",
+        "roi": [
+            647,
+            492,
+            221,
+            137
+        ],
+        "action": "Click",
+        "next": [
+            "QuickLITE",
+            "Sub_CloseDialogBox",
+            "Sub_HomeButton",
+            "HomeFlag"
+        ]
+    },
+    "MaterialEventNoneLevelsToLITE": {
+        "recognition": "OCR",
+        "expected": "没有可减负的关卡",
+        "roi": [
+            457,
+            283,
+            364,
+            148
+        ],
+        "action": "Click",
+        "next": [
+            "Sub_HomeButton",
+            "HomeFlag"
+        ]
+    }
+}

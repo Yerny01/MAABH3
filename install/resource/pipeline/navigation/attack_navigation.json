@@ -1,0 +1,28 @@
+{
+    "Sub_EnterAttackEventPage": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "Navigation/Attack/EnterAttackEventPage.png",
+        "roi": [
+            472,
+            33,
+            159,
+            135
+        ],
+        "action": "Click",
+        "post_delay": 1500
+    },
+    "Sub_EnterChallengeEventPage": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "Navigation/Attack/EnterChallengeEventPage.png",
+        "roi": [
+            647,
+            34,
+            162,
+            134
+        ],
+        "action": "Click",
+        "post_delay": 1500
+    }
+}

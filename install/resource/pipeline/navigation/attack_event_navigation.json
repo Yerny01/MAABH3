@@ -1,0 +1,15 @@
+{
+    "Sub_EnterMaterialExpeditionPage": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "Navigation/AttackEvent/EnterMaterialExpeditionPage.png",
+        "roi": [
+            452,
+            574,
+            196,
+            130
+        ],
+        "action": "Click",
+        "post_delay": 1500
+    }
+}

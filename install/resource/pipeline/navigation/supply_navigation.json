@@ -1,0 +1,18 @@
+{
+    "Sub_EnterShopPage": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "Navigation/Supply/EnterShopPage.png",
+        "roi": [
+            157,
+            484,
+            213,
+            135
+        ],
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 200,
+            "target": "Sub_EnterShopPage"
+        }
+    }
+}

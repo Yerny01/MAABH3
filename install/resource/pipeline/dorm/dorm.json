@@ -1,0 +1,126 @@
+{
+    "Dorm": {
+        "next": [
+            "Sub_ConfirmDormUpdate",
+            "DormPageFlag",
+            "Sub_AiPromptFlag",
+            "Sub_CancelDownload",
+            "Sub_EnterDormPage",
+            "Sub_StartUp"
+        ]
+    },
+    "DormPageFlag": {
+        "recognition": "OCR",
+        "expected": "家园小队",
+        "roi": [
+            28,
+            589,
+            208,
+            131
+        ],
+        "next": [
+            "Sub_ConfirmDormUpdate",
+            "CollectGold",
+            "CollectAP",
+            "Errands",
+            "Expeditions",
+            "Stop"
+        ]
+    },
+    "CollectGold": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "Dorm/CollectGold.png",
+            "Dorm/CollectGoldMax.png"
+        ],
+        "roi": [
+            286,
+            69,
+            141,
+            146
+        ],
+        "action": "Click",
+        "next": [
+            "CollectGold",
+            "CollectAP",
+            "Errands",
+            "Expeditions",
+            "Stop"
+        ]
+    },
+    "CollectAP": {
+        "recognition": "TemplateMatch",
+        "template": "Dorm/CollectAP.png",
+        "roi": [
+            124,
+            68,
+            146,
+            155
+        ],
+        "action": "Click",
+        "next": [
+            "CollectAP",
+            "CollectAPButton"
+        ]
+    },
+    "CollectAPButton": {
+        "recognition": "TemplateMatch",
+        "template": "Dorm/CollectAPButton.png",
+        "roi": [
+            650,
+            496,
+            215,
+            130
+        ],
+        "action": "Click",
+        "next": [
+            "APMax",
+            "CollectAPButton",
+            "Errands",
+            "Expeditions",
+            "Stop"
+        ]
+    },
+    "APMax": {
+        "recognition": "OCR",
+        "expected": "已经达到体力上限",
+        "roi": [
+            461,
+            289,
+            359,
+            138
+        ],
+        "next": [
+            "CloseCollectAP"
+        ]
+    },
+    "CloseCollectAP": {
+        "recognition": "TemplateMatch",
+        "template": "Dorm/CloseCollectAP.png",
+        "roi": [
+            1017,
+            58,
+            137,
+            138
+        ],
+        "action": "Click",
+        "next": [
+            "CloseCollectAP",
+            "Errands",
+            "Expeditions",
+            "Stop"
+        ]
+    },
+    "Sub_ConfirmDormUpdate": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "StartUp/Confirm.png",
+        "roi": [
+            554,
+            518,
+            173,
+            136
+        ],
+        "action": "Click"
+    }
+}

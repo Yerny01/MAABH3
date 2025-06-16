@@ -1,0 +1,304 @@
+{
+    "UniversalMirage": {
+        "next": [
+            "UniversalMiragePageFlag",
+            "Sub_AiPromptFlag",
+            "Sub_CancelDownload",
+            "Sub_EnterUniversalMiragePage",
+            "Sub_EnterChallengeEventPage",
+            "Sub_EnterAttackPage",
+            "Sub_StartUp"
+        ]
+    },
+    "UniversalMiragePageFlag": {
+        "recognition": "TemplateMatch",
+        "template": "Combat/UniversalMirage/UniversalMiragePageFlag.png",
+        "roi": [
+            526,
+            40,
+            228,
+            140
+        ],
+        "next": [
+            "Sub_CloseDialogBox",
+            "UniversalMirageStageFlag",
+            "Sub_EnterGlacialFencesPage",
+            "Sub_EnterIlluminatedLandPage",
+            "Sub_EnterRoaringPalacePage",
+            "Sub_EnterBladeGravePage",
+            "Stop"
+        ]
+    },
+    "UniversalMirageStageFlag": {
+        "recognition": "TemplateMatch",
+        "template": "Combat/UniversalMirage/UniversalMirageStageFlag.png",
+        "roi": [
+            1166,
+            64,
+            114,
+            133
+        ],
+        "pre_wait_freezes": {
+            "time": 200,
+            "target": "UniversalMirageStageFlag"
+        },
+        "next": [
+            "Sub_CloseDialogBox",
+            "UniversalMirageStageF2",
+            "UniversalMirageStageF5",
+            "Stop"
+        ]
+    },
+    "UniversalMirageStageF2": {
+        "enabled": false,
+        "next": [
+            "UniversalMirageStageF2Flag",
+            "SelectUniversalMirageStageF2",
+            "Sub_UniversalMirageStageSwipeTop"
+        ]
+    },
+    "UniversalMirageStageF5": {
+        "task_doc": "todo",
+        "enabled": false,
+        "next": [
+            "Stop",
+            "UniversalMirageStageF5Flag",
+            "SelectUniversalMirageStageF5",
+            "Sub_UniversalMirageStageSwipeBottom"
+        ]
+    },
+    "Sub_UniversalMirageStageSwipeTop": {
+        "is_sub": true,
+        "action": "Swipe",
+        "begin": [
+            400,
+            100,
+            80,
+            50
+        ],
+        "end": [
+            400,
+            600,
+            80,
+            50
+        ],
+        "duration": 500
+    },
+    "Sub_UniversalMirageStageSwipeBottom": {
+        "is_sub": true,
+        "action": "Swipe",
+        "begin": [
+            400,
+            600,
+            80,
+            50
+        ],
+        "end": [
+            400,
+            100,
+            80,
+            50
+        ],
+        "duration": 500
+    },
+    "SelectUniversalMirageStageF2": {
+        "recognition": "OCR",
+        "expected": "2",
+        "roi": [
+            200,
+            80,
+            370,
+            640
+        ],
+        "action": "Click",
+        "next": [
+            "UniversalMirageStageF2Flag",
+            "SelectUniversalMirageStageF2"
+        ]
+    },
+    "SelectUniversalMirageStageF5": {
+        "recognition": "OCR",
+        "expected": "5",
+        "roi": [
+            200,
+            80,
+            370,
+            640
+        ],
+        "action": "Click",
+        "next": [
+            "UniversalMirageStageF5Flag",
+            "SelectUniversalMirageStageF5"
+        ]
+    },
+    "UniversalMirageStageF2Flag": {
+        "recognition": "OCR",
+        "expected": "第2层",
+        "roi": [
+            765,
+            18,
+            170,
+            139
+        ],
+        "next": [
+            "UniversalMirageNoneInviteOfMirage",
+            "UniversalMirageStageNoneValkyrja",
+            "UniversalMirageStageF2Start",
+            "Sub_UniversalMirageStagePrepare",
+            "Sub_UniversalMirageStageFightAlone"
+        ]
+    },
+    "UniversalMirageStageF5Flag": {
+        "recognition": "OCR",
+        "expected": "第5层",
+        "roi": [
+            765,
+            18,
+            170,
+            139
+        ],
+        "next": [
+            "UniversalMirageNoneInviteOfMirage",
+            "UniversalMirageStageNoneValkyrja",
+            "UniversalMirageStageF5Start",
+            "Sub_UniversalMirageStagePrepare",
+            "Sub_UniversalMirageStageFightAlone"
+        ]
+    },
+    "Sub_UniversalMirageStageFightAlone": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "Combat/UniversalMirage/UniversalMirageStageFightAlone.png",
+        "roi": [
+            1004,
+            601,
+            226,
+            119
+        ],
+        "action": "Click"
+    },
+    "Sub_UniversalMirageStagePrepare": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "Combat/UniversalMirage/UniversalMirageStagePrepare.png",
+        "roi": [
+            994,
+            602,
+            223,
+            118
+        ],
+        "action": "Click"
+    },
+    "UniversalMirageStageF2Start": {
+        "recognition": "TemplateMatch",
+        "template": "Combat/UniversalMirage/UniversalMirageStageStart.png",
+        "roi": [
+            885,
+            604,
+            168,
+            116
+        ],
+        "next": [
+            "UniversalMirageCombatGeneric"
+        ]
+    },
+    "UniversalMirageStageF5Start": {
+        "recognition": "TemplateMatch",
+        "template": "Combat/UniversalMirage/UniversalMirageStageStart.png",
+        "roi": [
+            1025,
+            589,
+            190,
+            131
+        ],
+        "next": [
+            "Stop"
+        ]
+    },
+    "UniversalMirageNoneInviteOfMirage": {
+        "recognition": "OCR",
+        "expected": "虚境挑战书不足",
+        "roi": [
+            362,
+            287,
+            557,
+            140
+        ],
+        "next": "Stop"
+    },
+    "UniversalMirageStageNoneValkyrja": {
+        "recognition": "TemplateMatch",
+        "template": "Combat/UniversalMirage/UniversalMirageStageNoneValkyrja.png",
+        "roi": [
+            5,
+            371,
+            192,
+            132
+        ],
+        "next": "Stop"
+    },
+    "UniversalMirageCombatFinish": {
+        "recognition": "OCR",
+        "expected": "战斗耗时",
+        "roi": [
+            738,
+            360,
+            220,
+            140
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "UniversalMirageCostingTimeSwirlPasses",
+            "UniversalMirageQuit",
+            "UniversalMirageCombatFinish"
+        ]
+    },
+    "UniversalMirageCostingTimeSwirlPasses": {
+        "enabled": false,
+        "recognition": "TemplateMatch",
+        "template": "Combat/UniversalMirage/UniversalMirageCostingTimeSwirlPasses.png",
+        "roi": [
+            714,
+            552,
+            147,
+            141
+        ],
+        "action": "Click",
+        "next": [
+            "UniversalMirageNoneTimeSwirlPasses",
+            "UniversalMirageCostingTimeSwirlPasses",
+            "Sub_CloseDialogBox",
+            "Stop"
+        ]
+    },
+    "UniversalMirageNoneTimeSwirlPasses": {
+        "recognition": "OCR",
+        "expected": "您的时序通行证数量不足",
+        "roi": [
+            234,
+            286,
+            459,
+            142
+        ],
+        "next": [
+            "UniversalMirageQuit"
+        ]
+    },
+    "UniversalMirageQuit": {
+        "recognition": "OCR",
+        "expected": "退出",
+        "roi": [
+            360,
+            551,
+            165,
+            137
+        ],
+        "action": "Click",
+        "next": [
+            "UniversalMirageQuit",
+            "Sub_CloseDialogBox",
+            "Stop"
+        ]
+    }
+}

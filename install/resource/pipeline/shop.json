@@ -1,0 +1,214 @@
+{
+    "Shop": {
+        "next": [
+            "DailyShopPageFlag",
+            "Sub_AiPromptFlag",
+            "Sub_CancelDownload",
+            "Sub_EnterShopPage",
+            "Sub_EnterSupplyPage",
+            "Sub_StartUp"
+        ]
+    },
+    "DailyShopPageFlag": {
+        "recognition": "TemplateMatch",
+        "template": "Shop/DailyShopPageFlag.png",
+        "roi": [
+            63,
+            53,
+            201,
+            138
+        ],
+        "next": [
+            "LogisticsTerminalBuyCharacterFragmentByGold",
+            "MirageStoreBuyTimeSwirlPassesBy1Asterite",
+            "Sub_CloseDialogBox"
+        ]
+    },
+    "LogisticsTerminalBuyCharacterFragmentByGold": {
+        "recognition": "TemplateMatch",
+        "template": "Shop/LogisticsTerminalPage.png",
+        "roi": [
+            61,
+            131,
+            204,
+            134
+        ],
+        "next": [
+            "LogisticsTerminalCharacterFragmentFlag",
+            "LogisticsTerminalNotCharacterFragmentFlag"
+        ]
+    },
+    "LogisticsTerminalCharacterFragmentFlag": {
+        "recognition": "TemplateMatch",
+        "template": "Shop/LogisticsTerminalCharacterFragmentFlag.png",
+        "roi": [
+            232,
+            138,
+            139,
+            140
+        ],
+        "next": [
+            "LogisticsTerminalBuyCharacterFragmentByGoldFlag",
+            "LogisticsTerminalNotBuyCharacterFragmentByGoldFlag"
+        ]
+    },
+    "LogisticsTerminalNotCharacterFragmentFlag": {
+        "recognition": "TemplateMatch",
+        "inverse": true,
+        "template": "Shop/LogisticsTerminalCharacterFragmentFlag.png",
+        "roi": [
+            232,
+            138,
+            139,
+            140
+        ],
+        "next": [
+            "MirageStoreBuyTimeSwirlPassesBy1Asterite",
+            "Stop"
+        ]
+    },
+    "LogisticsTerminalBuyCharacterFragmentByGoldFlag": {
+        "recognition": "TemplateMatch",
+        "template": "Shop/LogisticsTerminalBuyCharacterFragmentByGoldFlag.png",
+        "roi": [
+            246,
+            373,
+            133,
+            136
+        ],
+        "action": "Click",
+        "next": [
+            "LogisticsTerminalCharacterFragmentFlag",
+            "LogisticsTerminalBuyCharacterFragmentByGoldDo"
+        ]
+    },
+    "LogisticsTerminalNotBuyCharacterFragmentByGoldFlag": {
+        "recognition": "TemplateMatch",
+        "inverse": true,
+        "template": "Shop/LogisticsTerminalBuyCharacterFragmentByGoldFlag.png",
+        "roi": [
+            246,
+            373,
+            133,
+            136
+        ],
+        "action": "Click",
+        "next": [
+            "MirageStoreBuyTimeSwirlPassesBy1Asterite",
+            "Stop"
+        ]
+    },
+    "LogisticsTerminalBuyCharacterFragmentByGoldDo": {
+        "recognition": "TemplateMatch",
+        "template": "Shop/LogisticsTerminalBuyCharacterFragmentByGoldFlag.png",
+        "roi": [
+            757,
+            496,
+            135,
+            140
+        ],
+        "action": "Click",
+        "next": [
+            "LogisticsTerminalBuyCharacterFragmentByGoldSuccess",
+            "LogisticsTerminalBuyCharacterFragmentByGoldDone",
+            "LogisticsTerminalBuyCharacterFragmentByGoldDo"
+        ]
+    },
+    "LogisticsTerminalBuyCharacterFragmentByGoldSuccess": {
+        "recognition": "OCR",
+        "expected": "您已购买成功",
+        "roi": [
+            490,
+            288,
+            302,
+            140
+        ],
+        "action": "Click",
+        "next": [
+            "MirageStoreBuyTimeSwirlPassesBy1Asterite",
+            "Stop"
+        ]
+    },
+    "LogisticsTerminalBuyCharacterFragmentByGoldDone": {
+        "recognition": "TemplateMatch",
+        "template": "Shop/SoldOut.png",
+        "roi": [
+            262,
+            372,
+            179,
+            135
+        ],
+        "next": [
+            "MirageStoreBuyTimeSwirlPassesBy1Asterite",
+            "Stop"
+        ]
+    },
+    "MirageStoreBuyTimeSwirlPassesBy1Asterite": {
+        "recognition": "TemplateMatch",
+        "template": "Shop/LogisticsTerminalPage.png",
+        "next": [
+            "MirageStore1AsteriteFlag",
+            "Sub_EnterMirageStorePage",
+            "Sub_EnterActivityShopPage",
+            "Stop"
+        ]
+    },
+    "MirageStore1AsteriteFlag": {
+        "recognition": "TemplateMatch",
+        "template": "Shop/MirageStore1AsteriteFlag.png",
+        "roi": [
+            273,
+            371,
+            172,
+            142
+        ],
+        "action": "Click",
+        "next": [
+            "MirageStoreBuyTimeSwirlPassesBy1AsteriteDo",
+            "MirageStore1AsteriteFlag"
+        ]
+    },
+    "MirageStoreBuyTimeSwirlPassesBy1AsteriteDo": {
+        "recognition": "TemplateMatch",
+        "template": "Shop/MirageStore1AsteriteFlag.png",
+        "roi": [
+            781,
+            495,
+            161,
+            145
+        ],
+        "action": "Click",
+        "next": [
+            "MirageStoreBuyTimeSwirlPassesBy1AsteriteSuccess",
+            "MirageStoreBuyTimeSwirlPassesBy1AsteriteDone",
+            "MirageStoreBuyTimeSwirlPassesBy1AsteriteDo"
+        ]
+    },
+    "MirageStoreBuyTimeSwirlPassesBy1AsteriteSuccess": {
+        "recognition": "OCR",
+        "expected": "您已购买成功",
+        "roi": [
+            490,
+            288,
+            302,
+            140
+        ],
+        "action": "Click",
+        "next": [
+            "Stop"
+        ]
+    },
+    "MirageStoreBuyTimeSwirlPassesBy1AsteriteDone": {
+        "recognition": "TemplateMatch",
+        "template": "Shop/SoldOut.png",
+        "roi": [
+            262,
+            372,
+            179,
+            135
+        ],
+        "next": [
+            "Stop"
+        ]
+    }
+}

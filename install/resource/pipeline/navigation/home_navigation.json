@@ -1,0 +1,79 @@
+{
+    "Sub_EnterAttackPage": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "出击",
+        "roi": [
+            1082,
+            282,
+            192,
+            150
+        ],
+        "action": "Click",
+        "post_delay": 1500
+    },
+    "Sub_EnterSupplyPage": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "补给",
+        "roi": [
+            1085,
+            510,
+            147,
+            126
+        ],
+        "action": "Click",
+        "post_delay": 1500
+    },
+    "Sub_EnterArmadaPage": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": [
+            "舰团"
+        ],
+        "roi": [
+            868,
+            611,
+            141,
+            109
+        ],
+        "action": "Click",
+        "post_delay": 1500
+    },
+    "Sub_EnterDormPage": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": [
+            "家园"
+        ],
+        "roi": [
+            1118,
+            659,
+            47,
+            30
+        ],
+        "action": "Click",
+        "post_delay": 1500
+    },
+    "Sub_EnterMissionsPage": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": [
+            "任务"
+        ],
+        "roi": [
+            48,
+            61,
+            142,
+            122
+        ],
+        "action": "Click",
+        "target_offset": [
+            -67,
+            7,
+            14,
+            14
+        ],
+        "post_delay": 1500
+    }
+}

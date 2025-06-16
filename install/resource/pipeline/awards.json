@@ -1,0 +1,293 @@
+{
+    "Awards": {
+        "next": [
+            "MissionsPageFlag",
+            "Sub_AiPromptFlag",
+            "Sub_CancelDownload",
+            "Sub_EnterMissionsPage",
+            "Sub_StartUp"
+        ]
+    },
+    "MissionsPageFlag": {
+        "recognition": "OCR",
+        "expected": "作战任务",
+        "roi": [
+            0,
+            60,
+            210,
+            575
+        ],
+        "post_wait_freezes": 200,
+        "next": [
+            "Sub_EnterBPMissionsPage",
+            "BPMissionsQuickClaim",
+            "NoneDailyBPRewards",
+            "DailyBPRewards_100",
+            "DailyBPRewards_200",
+            "DailyBPRewards_300",
+            "DailyBPRewards_450",
+            "DailyBPRewards_600"
+        ]
+    },
+    "BPMissionsQuickClaim": {
+        "recognition": "TemplateMatch",
+        "template": "Awards/BPMissionsQuickClaim.png",
+        "threshold": 0.85,
+        "roi": [
+            1055,
+            53,
+            225,
+            135
+        ],
+        "action": "Click",
+        "next": [
+            "Sub_CloseDialogBox",
+            "BPMissionsQuickClaim",
+            "NoneDailyBPRewards",
+            "DailyBPRewards_100",
+            "DailyBPRewards_200",
+            "DailyBPRewards_300",
+            "DailyBPRewards_450",
+            "DailyBPRewards_600"
+        ]
+    },
+    "DailyBPRewards_100": {
+        "recognition": "TemplateMatch",
+        "template": "Awards/DailyBPRewardsClaimed.png",
+        "inverse": true,
+        "roi": [
+            485,
+            637,
+            52,
+            67
+        ],
+        "action": "Click",
+        "target": [
+            485,
+            637,
+            52,
+            67
+        ],
+        "next": [
+            "DailyBPRewardsClaim_100",
+            "DailyBPRewardsPreview",
+            "Sub_CloseDialogBox",
+            "Sub_BackButton",
+            "HomeFlag"
+        ]
+    },
+    "DailyBPRewardsClaim_100": {
+        "recognition": "TemplateMatch",
+        "template": "Awards/DailyBPRewardsClaim.png",
+        "roi": [
+            485,
+            637,
+            52,
+            67
+        ],
+        "next": [
+            "DailyBPRewardsPreview",
+            "DailyBPRewards_100",
+            "Sub_CloseDialogBox",
+            "Sub_BackButton",
+            "HomeFlag"
+        ]
+    },
+    "DailyBPRewards_200": {
+        "recognition": "TemplateMatch",
+        "template": "Awards/DailyBPRewardsClaimed.png",
+        "inverse": true,
+        "roi": [
+            660,
+            636,
+            57,
+            69
+        ],
+        "action": "Click",
+        "target": [
+            660,
+            636,
+            57,
+            69
+        ],
+        "next": [
+            "DailyBPRewardsClaim_200",
+            "DailyBPRewardsPreview",
+            "Sub_CloseDialogBox",
+            "Sub_BackButton",
+            "HomeFlag"
+        ]
+    },
+    "DailyBPRewardsClaim_200": {
+        "recognition": "TemplateMatch",
+        "template": "Awards/DailyBPRewardsClaim.png",
+        "roi": [
+            660,
+            636,
+            57,
+            69
+        ],
+        "next": [
+            "DailyBPRewardsPreview",
+            "DailyBPRewards_200",
+            "Sub_CloseDialogBox",
+            "Sub_BackButton",
+            "HomeFlag"
+        ]
+    },
+    "DailyBPRewards_300": {
+        "recognition": "TemplateMatch",
+        "template": "Awards/DailyBPRewardsClaimed.png",
+        "inverse": true,
+        "roi": [
+            837,
+            637,
+            54,
+            69
+        ],
+        "action": "Click",
+        "target": [
+            837,
+            637,
+            54,
+            69
+        ],
+        "next": [
+            "DailyBPRewardsClaim_300",
+            "DailyBPRewardsPreview",
+            "Sub_CloseDialogBox",
+            "Sub_BackButton",
+            "HomeFlag"
+        ]
+    },
+    "DailyBPRewardsClaim_300": {
+        "recognition": "TemplateMatch",
+        "template": "Awards/DailyBPRewardsClaim.png",
+        "roi": [
+            837,
+            637,
+            54,
+            69
+        ],
+        "next": [
+            "DailyBPRewardsPreview",
+            "DailyBPRewards_300",
+            "Sub_CloseDialogBox",
+            "Sub_BackButton",
+            "HomeFlag"
+        ]
+    },
+    "DailyBPRewards_450": {
+        "recognition": "TemplateMatch",
+        "template": "Awards/DailyBPRewardsClaimed.png",
+        "inverse": true,
+        "roi": [
+            1013,
+            636,
+            53,
+            67
+        ],
+        "action": "Click",
+        "target": [
+            1013,
+            636,
+            53,
+            67
+        ],
+        "next": [
+            "DailyBPRewardsClaim_450",
+            "DailyBPRewardsPreview",
+            "Sub_CloseDialogBox",
+            "Sub_BackButton",
+            "HomeFlag"
+        ]
+    },
+    "DailyBPRewardsClaim_450": {
+        "recognition": "TemplateMatch",
+        "template": "Awards/DailyBPRewardsClaim.png",
+        "roi": [
+            1013,
+            636,
+            53,
+            67
+        ],
+        "next": [
+            "DailyBPRewardsPreview",
+            "DailyBPRewards_450",
+            "Sub_CloseDialogBox",
+            "Sub_BackButton",
+            "HomeFlag"
+        ]
+    },
+    "DailyBPRewards_600": {
+        "recognition": "TemplateMatch",
+        "template": "Awards/DailyBPRewardsClaimed.png",
+        "inverse": true,
+        "roi": [
+            1187,
+            636,
+            55,
+            66
+        ],
+        "action": "Click",
+        "target": [
+            1187,
+            636,
+            55,
+            66
+        ],
+        "next": [
+            "DailyBPRewardsClaim_600",
+            "DailyBPRewardsPreview",
+            "Sub_CloseDialogBox",
+            "Sub_BackButton",
+            "HomeFlag"
+        ]
+    },
+    "DailyBPRewardsClaim_600": {
+        "recognition": "TemplateMatch",
+        "template": "Awards/DailyBPRewardsClaim.png",
+        "roi": [
+            1187,
+            636,
+            55,
+            66
+        ],
+        "next": [
+            "DailyBPRewardsPreview",
+            "DailyBPRewards_600",
+            "Sub_CloseDialogBox",
+            "Sub_BackButton",
+            "HomeFlag"
+        ]
+    },
+    "DailyBPRewardsPreview": {
+        "recognition": "TemplateMatch",
+        "template": "Awards/DailyBPRewardsPreview.png",
+        "roi": [
+            442,
+            94,
+            398,
+            143
+        ],
+        "next": [
+            "Sub_CloseDialogBox",
+            "Sub_BackButton",
+            "HomeFlag"
+        ]
+    },
+    "NoneDailyBPRewards": {
+        "recognition": "TemplateMatch",
+        "template": "Awards/NoneDailyBPRewards.png",
+        "roi": [
+            439,
+            597,
+            585,
+            123
+        ],
+        "next": [
+            "Sub_BackButton",
+            "HomeFlag"
+        ]
+    }
+}

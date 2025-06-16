@@ -1,0 +1,138 @@
+{
+    "Errands": {
+        "next": [
+            "ErrandsPageFlag",
+            "Sub_EnterErrandsPage",
+            "Sub_EnterDormPage",
+            "Sub_BackButton"
+        ]
+    },
+    "ErrandsPageFlag": {
+        "recognition": "TemplateMatch",
+        "template": "Dorm/ErrandsPageFlag.png",
+        "roi": [
+            0,
+            17,
+            278,
+            250
+        ],
+        "next": [
+            "ErrandsUnfold",
+            "Rewards_claim1",
+            "Rewards_claim2"
+        ]
+    },
+    "ErrandsUnfold": {
+        "recognition": "OCR",
+        "expected": [
+            "一键打工"
+        ],
+        "roi": [
+            878,
+            612,
+            247,
+            108
+        ],
+        "action": "Click",
+        "next": [
+            "ErrandsUnfold",
+            "One_click1"
+        ]
+    },
+    "One_click1": {
+        "recognition": "TemplateMatch",
+        "template": "Dorm/available.png",
+        "roi": [
+            611,
+            545,
+            417,
+            153
+        ],
+        "action": "Click",
+        "next": [
+            "Rewards_claim",
+            "One_click2",
+            "One_click1"
+        ]
+    },
+    "One_click2": {
+        "recognition": "TemplateMatch",
+        "template": "Dorm/forbidden.png",
+        "roi": [
+            609,
+            547,
+            417,
+            145
+        ],
+        "next": [
+            "Close",
+            "One_click2",
+            "One_click1",
+            "Close"
+        ]
+    },
+    "Close": {
+        "recognition": "TemplateMatch",
+        "template": "Dorm/Close.png",
+        "roi": [
+            1059,
+            3,
+            137,
+            133
+        ],
+        "action": "Click",
+        "next": [
+            "Close",
+            "Rewards_claim1",
+            "Rewards_claim2"
+        ]
+    },
+    "Rewards_claim1": {
+        "recognition": "TemplateMatch",
+        "template": "Dorm/Collection_available.png",
+        "roi": [
+            1051,
+            610,
+            229,
+            110
+        ],
+        "action": "Click",
+        "next": [
+            "Rewards_claim1",
+            "ErrandsCompleted",
+            "Rewards_claim2"
+        ]
+    },
+    "Rewards_claim2": {
+        "recognition": "TemplateMatch",
+        "template": "Dorm/Collection_forbidden.png",
+        "roi": [
+            1053,
+            611,
+            227,
+            109
+        ],
+        "next": [
+            "Expeditions",
+            "Rewards_claim1",
+            "Rewards_claim2",
+            "Stop"
+        ]
+    },
+    "ErrandsCompleted": {
+        "recognition": "TemplateMatch",
+        "template": "Dorm/Confirm_errands.png",
+        "roi": [
+            447,
+            470,
+            384,
+            150
+        ],
+        "action": "Click",
+        "next": [
+            "ErrandsCompleted",
+            "Expeditions",
+            "Stop"
+        ]
+    }
+}
