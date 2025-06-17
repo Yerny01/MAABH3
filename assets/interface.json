@@ -1,0 +1,31 @@
+{
+  "name": "MAABH3",
+  "version": "0.1.0",
+   "controller": [
+        {
+            "name": "安卓端",
+            "type": "Adb"
+        }
+    ],
+    "default_controller": "adb",
+    "lock_controller": true,
+ 
+    "resource": [
+        {
+            "name": "官服",
+            "path": [
+                "{PROJECT_DIR}/resource"
+            ]
+        }
+    ],
+  "task": [
+    {
+      "name": "开始游戏",
+      "entry": "Sub_StartUp",
+      "check": true,
+      "doc": "开始游戏",
+      "repeatable": true,
+      "repeat_count": 1
+    }
+  ]
+}
