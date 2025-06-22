@@ -1,27 +1,4 @@
 {
-    "Sub_BackButton": {
-        "is_sub": true,
-        "recognition": "TemplateMatch",
-        "template": [
-            "Utils/BackButton.png",
-            "Utils/BackButton_1.png"
-        ],
-        "roi": [
-            [
-                0,
-                0,
-                180,
-                133
-            ],
-            [
-                60,
-                0,
-                124,
-                132
-            ]
-        ],
-        "action": "Click"
-    },
     "Sub_BackText": {
         "is_sub": true,
         "recognition": "OCR",
@@ -33,29 +10,6 @@
             0,
             220,
             160
-        ],
-        "action": "Click"
-    },
-    "Sub_HomeButton": {
-        "is_sub": true,
-        "recognition": "TemplateMatch",
-        "template": [
-            "Utils/HomeButton.png",
-            "Utils/HomeButton_1.png"
-        ],
-        "roi": [
-            [
-                126,
-                0,
-                212,
-                134
-            ],
-            [
-                136,
-                0,
-                133,
-                132
-            ]
         ],
         "action": "Click"
     },
@@ -100,5 +54,65 @@
             "Stop"
         ]
     },
-    "Stop": {}
+    "Stop": {},
+    "Sub_BackButton_1": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "Utils/BackButton.png",
+            "Utils/BackButton_1.png"
+        ],
+        "roi": [
+            0,
+            0,
+            180,
+            133
+        ],
+        "action": "Click"
+    },
+    "Sub_BackButton_2": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "Utils/BackButton.png",
+            "Utils/BackButton_1.png"
+        ],
+        "roi": [
+            60,
+            0,
+            124,
+            132
+        ],
+        "action": "Click"
+    },
+    "Sub_HomeButton_1": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "Utils/HomeButton.png",
+            "Utils/HomeButton_1.png"
+        ],
+        "roi": [
+            126,
+            0,
+            212,
+            134
+        ],
+        "action": "Click"
+    },
+    "Sub_HomeButton_2": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "Utils/HomeButton.png",
+            "Utils/HomeButton_1.png"
+        ],
+        "roi": [
+            136,
+            0,
+            133,
+            132
+        ],
+        "action": "Click"
+    }
 }

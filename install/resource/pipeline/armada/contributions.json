@@ -4,7 +4,8 @@
             "ContributionsPageFlag",
             "Sub_EnterContributionsPage",
             "Sub_EnterArmadaPage",
-            "Sub_BackButton"
+            "Sub_BackButton_1",
+            "Sub_BackButton_2"
         ]
     },
     "ContributionsPageFlag": {

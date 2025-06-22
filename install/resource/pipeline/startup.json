@@ -2,8 +2,10 @@
     "Sub_StartUp": {
         "is_sub": true,
         "next": [
-            "Sub_HomeButton",
-            "Sub_BackButton",
+            "Sub_HomeButton_1",
+            "Sub_HomeButton_2",
+            "Sub_BackButton_1",
+            "Sub_BackButton_2",
             "Sub_BackText",
             "Sub_ObtainedAwards",
             "Sub_CollectDailyLoginReward",
@@ -27,14 +29,16 @@
     "Sub_StartBH3": {
         "is_sub": true,
         "action": "StartApp",
-        "package_doc": "set in code."
+        "package": "com.miHoYo.enterprise.NGHSoD"
     },
     "RestartBH3": {
         "action": "StopApp",
-        "package_doc": "set in code.",
+        "package": "com.miHoYo.enterprise.NGHSoD",
         "next": [
-            "Sub_HomeButton",
-            "Sub_BackButton",
+            "Sub_HomeButton_1",
+            "Sub_HomeButton_2",
+            "Sub_BackButton_1",
+            "Sub_BackButton_2",
             "Sub_BackText",
             "Sub_ObtainedAwards",
             "Sub_CollectDailyLoginReward",
@@ -80,8 +84,10 @@
             218
         ],
         "next": [
-            "Sub_HomeButton",
-            "Sub_BackButton",
+            "Sub_HomeButton_1",
+            "Sub_HomeButton_2",
+            "Sub_BackButton_1",
+            "Sub_BackButton_2",
             "Sub_BackText",
             "Sub_ObtainedAwards",
             "Sub_CollectDailyLoginReward",
@@ -113,6 +119,8 @@
         "next": [
             "Download",
             "GameLoading",
+            "Shadercompilation",
+            "DownloadedConfirm",
             "StartGame",
             "GameIdentifying",
             "Sub_CloseAnnouncement",
@@ -140,7 +148,8 @@
             "CloseVersionAnnouncement",
             "StartGame",
             "GameIdentifying",
-            "Sub_BackButton",
+            "Sub_BackButton_1",
+            "Sub_BackButton_2",
             "Sub_BackText",
             "Sub_ObtainedAwards",
             "Sub_CollectDailyLoginReward",
@@ -173,7 +182,8 @@
         "recognition": "OCR",
         "action": "Click",
         "next": [
-            "Sub_BackButton",
+            "Sub_BackButton_1",
+            "Sub_BackButton_2",
             "Sub_BackText",
             "Sub_ObtainedAwards",
             "Sub_CollectDailyLoginReward",
@@ -258,9 +268,13 @@
         ],
         "next": [
             "DownloadConfirm",
-            "Downloading",
-            "Checking",
-            "Downloaded",
+            "Downloading_1",
+            "Downloading_2",
+            "Shadercompilation",
+            "Checking_1",
+            "Checking_2",
+            "Downloaded_1",
+            "Downloaded_2",
             "DownloadedConfirm",
             "Download"
         ]
@@ -276,85 +290,15 @@
         ],
         "action": "Click",
         "next": [
-            "Downloading",
-            "Checking",
-            "Downloaded",
+            "Downloading_1",
+            "Downloading_2",
+            "Shadercompilation",
+            "Checking_1",
+            "Checking_2",
+            "Downloaded_1",
+            "Downloaded_2",
             "DownloadedConfirm",
             "Download"
-        ]
-    },
-    "Downloading": {
-        "recognition": "OCR",
-        "expected": [
-            "下载中"
-        ],
-        "roi": [
-            [
-                1067,
-                593,
-                169,
-                127
-            ],
-            [
-                17,
-                567,
-                175,
-                137
-            ]
-        ],
-        "next": [
-            "Downloading",
-            "Checking",
-            "Downloaded",
-            "DownloadedConfirm"
-        ]
-    },
-    "Checking": {
-        "recognition": "OCR",
-        "expected": [
-            "校验中"
-        ],
-        "roi": [
-            [
-                1067,
-                593,
-                168,
-                127
-            ],
-            [
-                17,
-                567,
-                175,
-                137
-            ]
-        ],
-        "next": [
-            "Checking",
-            "Downloaded",
-            "DownloadedConfirm"
-        ]
-    },
-    "Downloaded": {
-        "recognition": "OCR",
-        "expected": [
-            "下载完成"
-        ],
-        "roi": [
-            [
-                1049,
-                594,
-                186,
-                126
-            ],
-            [
-                19,
-                571,
-                197,
-                131
-            ]
-        ],
-        "next": [
-            "DownloadedConfirm"
         ]
     },
     "DownloadedConfirm": {
@@ -392,7 +336,8 @@
             "CloseVersionAnnouncement",
             "StartGame",
             "GameIdentifying",
-            "Sub_BackButton",
+            "Sub_BackButton_1",
+            "Sub_BackButton_2",
             "Sub_BackText",
             "Sub_CloseAnnouncement",
             "Sub_CloseActivityAnnouncement",
@@ -503,5 +448,97 @@
             79,
             62
         ]
+    },
+    "Downloading_1": {
+        "recognition": "OCR",
+        "expected": [
+            "下载中"
+        ],
+        "roi": [
+            1067,
+            593,
+            169,
+            127
+        ],
+        "is_sub": true
+    },
+    "Downloading_2": {
+        "recognition": "OCR",
+        "expected": [
+            "下载中"
+        ],
+        "roi": [
+            17,
+            567,
+            175,
+            137
+        ],
+        "is_sub": true
+    },
+        "Shadercompilation": {
+        "recognition": "OCR",
+        "expected": [
+            "正在编译着色器"
+        ],
+        "roi": [
+            1004,
+            591,
+            236,
+            128
+        ],
+        "is_sub": true
+    },
+
+    "Checking_1": {
+        "recognition": "OCR",
+        "expected": [
+            "校验中"
+        ],
+        "roi": [
+            1067,
+            593,
+            168,
+            127
+        ],
+        "is_sub": true
+    },
+    "Checking_2": {
+        "recognition": "OCR",
+        "expected": [
+            "校验中"
+        ],
+        "roi": [
+            17,
+            567,
+            175,
+            137
+        ],
+        "is_sub": true
+    },
+    "Downloaded_1": {
+        "recognition": "OCR",
+        "expected": [
+            "下载完成"
+        ],
+        "roi": [
+            1049,
+            594,
+            186,
+            126
+        ],
+        "is_sub": true
+    },
+    "Downloaded_2": {
+        "recognition": "OCR",
+        "expected": [
+            "下载完成"
+        ],
+        "roi": [
+            19,
+            571,
+            197,
+            131
+        ],
+        "is_sub": true
     }
 }

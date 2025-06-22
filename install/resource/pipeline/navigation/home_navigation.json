@@ -27,15 +27,11 @@
     },
     "Sub_EnterArmadaPage": {
         "is_sub": true,
-        "recognition": "OCR",
-        "expected": [
-            "舰团"
-        ],
+        "recognition": "TemplateMatch",
+        "template": "Armada/ArmadaEntrance.png",
+    
         "roi": [
-            868,
-            611,
-            141,
-            109
+           766,651,202,55
         ],
         "action": "Click",
         "post_delay": 1500
@@ -61,12 +57,7 @@
         "expected": [
             "任务"
         ],
-        "roi": [
-            48,
-            61,
-            142,
-            122
-        ],
+        "roi" : [92,96,53,47],
         "action": "Click",
         "target_offset": [
             -67,

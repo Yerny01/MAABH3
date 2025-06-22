@@ -1,10 +1,12 @@
 {
     "Commissions": {
+       
         "next": [
             "CommissionsPageFlag",
             "Sub_EnterCommissionsPage",
             "Sub_EnterArmadaPage",
-            "Sub_BackButton"
+            "Sub_BackButton_1",
+            "Sub_BackButton_2"
         ]
     },
     "CommissionsPageFlag": {
@@ -100,7 +102,7 @@
     "CommissionSubmitButton": {
         "recognition": "TemplateMatch",
         "template": "Armada/CommissionSubmitButton.png",
-        "threshold": 0.94,
+        "threshold": 0.98,
         "roi": [
             860,
             579,
@@ -109,8 +111,10 @@
         ],
         "action": "Click",
         "next": [
-            "CommissionSubmitButton",
             "SubmitCommission"
+        ],
+        "interrupts": [
+            "CommissionSubmitButton"
         ]
     },
     "CommissionNoneSubmitButton": {
@@ -141,7 +145,7 @@
             142
         ],
         "action": "Click",
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 500,
         "next": [
             "CommissionsRewardsPageFlag",
             "Sub_EnterCommissionsRewardsPage"
@@ -157,6 +161,7 @@
             141
         ],
         "action": "Click",
+        "post_delay":500,
         "next": [
             "CommossionLimit",
             "SubmitCommission",

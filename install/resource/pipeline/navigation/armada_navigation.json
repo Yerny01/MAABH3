@@ -1,26 +1,22 @@
 {
     "Sub_EnterCommissionsPage": {
         "is_sub": true,
-        "recognition": "TemplateMatch",
-        "template": "Navigation/Armada/EnterCommissionsPage.png",
+        "recognition": "OCR",
+        "expected": ["委托回收"],
         "roi": [
             390,
             583,
             215,
             137
         ],
-        "action": "Click"
+        "action": "Click",
+        "post_delay": 1500
     },
     "Sub_EnterContributionsPage": {
         "is_sub": true,
-        "recognition": "TemplateMatch",
-        "template": "Navigation/Armada/EnterArmadaContribution.png",
-        "roi": [
-            832,
-            586,
-            212,
-            133
-        ],
+        "recognition": "OCR",
+        "expected": ["舰团贡献"],
+        "roi" : [747,625,145,52],
         "action": "Click",
         "post_wait_freezes": {
             "time": 200,

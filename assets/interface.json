@@ -1,29 +1,67 @@
 {
   "name": "MAABH3",
-  "version": "0.1.0",
-   "controller": [
-        {
-            "name": "安卓端",
-            "type": "Adb"
-        }
-    ],
-    "default_controller": "adb",
-    "lock_controller": true,
- 
-    "resource": [
-        {
-            "name": "官服",
-            "path": [
-                "{PROJECT_DIR}/resource"
-            ]
-        }
-    ],
-  "task": [
+  "version": "0.1.1",
+  "controller": [
     {
-      "name": "开始游戏",
-      "entry": "Sub_StartUp",
+      "name": "adb",
+      "type": "adb"
+    }
+  ],
+  "resource": [
+    {
+      "name": "默认",
+      "path": [
+        "{PROJECT_DIR}/resource"
+      ]
+    }
+  ],
+  "task": [
+
+    {
+      "name": "家园",
+      "entry": "Dorm",
       "check": true,
-      "doc": "开始游戏",
+      "doc": "自动收家园金币、体力、打工和远征",
+      "repeatable": true,
+      "repeat_count": 1
+    },
+    {
+      "name": "材料远征",
+      "entry": "MaterialEvent",
+      "check": true,
+      "doc": "自动一键减负",
+      "repeatable": true,
+      "repeat_count": 1
+    },
+    {
+      "name": "舰团",
+      "entry": "Armada",
+      "check": true,
+      "doc": "自动提交委托回收和领取舰团贡献奖励",
+      "repeatable": true,
+      "repeat_count": 1
+    },
+    {
+      "name": "商店",
+      "entry": "Shop",
+      "check": true,
+      "doc": "用金币购买后勤终端角色碎片和用1星石购买虚境商店的时序通行证",
+      "repeatable": true,
+      "repeat_count": 1
+    },
+    {
+      "name": "奖励",
+      "entry": "Awards",
+      "check": true,
+      "doc": "领取每日奖励",
+      "repeatable": true,
+      "repeat_count": 1
+    },
+    {
+      "name": "万象虚境",
+      "entry": "UniversalMirage",
+      "check": true,
+      "doc": "自动打第二层",
       "repeatable": true,
       "repeat_count": 1
     }
